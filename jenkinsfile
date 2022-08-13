@@ -1,5 +1,5 @@
 pipeline{
-  agents any
+  agent any
     stages{
       stage ('BUILD') {
         steps {
@@ -28,4 +28,3 @@ pipeline{
       }
     }
 }       
-
