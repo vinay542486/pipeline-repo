@@ -8,6 +8,7 @@ pipeline{
            pwd
            ls
            echo "this is to test build stage"
+           '''
         }
       }
       stage ('DEPLOY') {
@@ -27,4 +28,4 @@ pipeline{
       }
     }
 }       
-}
+
