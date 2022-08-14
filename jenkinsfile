@@ -1,6 +1,7 @@
 pipeline{
 agent none
   stages{
+  parallel {
       stage ('BUILD') {
         agent { label 'lab1' }
         steps {
@@ -15,8 +16,6 @@ agent none
            echo "this is to test deploy stage"
         }
       }
-    stage ('testing') {
-      parallel {
       stage ('TESTING1') {
         agent any
         steps {
@@ -30,6 +29,4 @@ agent none
         }
       }
       }
-      }
-    }
 }       
