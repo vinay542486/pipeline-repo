@@ -10,7 +10,7 @@ environment {
       stage ('BUILD') {
         agent { label 'lab1' }
          steps {
-         gitbranch: env.branch, url: env.git-repo
+         gitbranch: {env.branch} url: {env.git-repo}
            sh '''
            echo "this is to test build stage"
            echo "$branch"
