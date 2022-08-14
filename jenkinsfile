@@ -1,6 +1,7 @@
 pipeline{
 agent none
   stages{
+  stage ('all') {
   parallel {
       stage ('BUILD') {
         agent { label 'lab1' }
@@ -30,3 +31,4 @@ agent none
       }
       }
 }       
+}
