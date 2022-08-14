@@ -10,7 +10,6 @@ environment {
       stage ('BUILD') {
         agent any
          steps {
-         git branch: env.branch
            sh '''
            echo "this is to test build stage"
            echo "$branch"
