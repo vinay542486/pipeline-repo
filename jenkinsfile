@@ -8,7 +8,7 @@ environment {
   stage('all') {
   parallel {
       stage ('BUILD') {
-        agent { label 'lab1' }
+        agent any
          steps {
          git branch: env.branch, url: env.git-repo
            sh '''
