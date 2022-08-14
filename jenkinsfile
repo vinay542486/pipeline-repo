@@ -1,7 +1,7 @@
 pipeline{
 agent none
   stages{
-  stage ('all') {
+  stage('all') {
   parallel {
       stage ('BUILD') {
         agent { label 'lab1' }
