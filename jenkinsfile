@@ -15,7 +15,9 @@ agent none
            echo "this is to test deploy stage"
         }
       }
-      stage ('TESTING') {
+    stage ('testing') {
+      parallel {
+      stage ('TESTING1') {
         agent any
         steps {
            sh 'echo "this is to test testing stage"'
@@ -26,6 +28,8 @@ agent none
         steps {
            echo "this is to test testing2 stage"
         }
+      }
+      }
       }
     }
 }       
