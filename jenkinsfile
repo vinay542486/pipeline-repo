@@ -1,7 +1,8 @@
 pipeline{
-  agent { label 'lab2' }
-    stages{
+agent none
+  stages{
       stage ('BUILD') {
+        agent { label 'lab1' }
         steps {
            sh '''
            echo "this is to test build stage"
@@ -9,16 +10,19 @@ pipeline{
         }
       }
       stage ('DEPLOY') {
+        agent { label 'lab2' }
         steps {
            echo "this is to test deploy stage"
         }
       }
       stage ('TESTING') {
+        agent any
         steps {
            sh 'echo "this is to test testing stage"'
         }
       }
       stage ('TESTING2') {
+        agent { label 'master' }
         steps {
            echo "this is to test testing2 stage"
         }
