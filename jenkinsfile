@@ -1,13 +1,19 @@
 pipeline{
 agent none
+environment {
+  branch = 'main'
+  git-repo = "https://github.com/vinay542486/central-repo-c-project.git"
+}
   stages{
   stage('all') {
   parallel {
       stage ('BUILD') {
         agent { label 'lab1' }
-        steps {
+         steps {
+         gitbranch: env.branch url: env.git-repo
            sh '''
            echo "this is to test build stage"
+           echo "$branch"
            '''
         }
       }
@@ -20,7 +26,10 @@ agent none
       stage ('TESTING1') {
         agent any
         steps {
-           sh 'echo "this is to test testing stage"'
+           sh '''
+           echo "this is to test testing stage"
+           echo "$git-repo"
+           '''
         }
       }
       stage ('TESTING2') {
