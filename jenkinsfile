@@ -2,7 +2,7 @@ pipeline{
 agent none
 environment {
   branch = 'main'
-  git-repo = "https://github.com/vinay542486/central-repo-c-project.git"
+  git_repo = "https://github.com/vinay542486/central-repo-c-project.git"
 }
   stages{
   stage('all') {
@@ -28,7 +28,7 @@ environment {
         steps {
            sh '''
            echo "this is to test testing stage"
-           echo "$git-repo"
+           echo "$git_repo"
            '''
         }
       }
