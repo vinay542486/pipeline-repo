@@ -7,7 +7,7 @@ environment {
 parameters {
   string(name: 'branchnew', description: 'enter the branch to build', defaultValue: 'main')
   string(name: 'git_repo', description: 'enter the repo url', defaultValue: 'https://github.com/vinay542486/testrepo.git')
-  choice(name: 'stage', choices: ['build','deploy','testing1'], description: 'stages to build)
+  choice(name: 'stage', choices: ['build','deploy','testing1'], description: 'stages to build')
 }
 stages{
   stage('all') {
