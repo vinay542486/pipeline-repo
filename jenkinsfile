@@ -4,7 +4,11 @@ environment {
   branch = 'main'
   git_repo = "https://github.com/vinay542486/central-repo-c-project.git"
 }
-  stages{
+parameters {
+  string{defaultValue: 'main', description: 'enter the branch to build', name: 'branch'}
+  string{defaultValue: 'https://github.com/vinay542486/testrepo.git', description: 'enter the repo url', name: 'git_repo'}
+}
+stages{
   stage('all') {
   parallel {
       stage ('BUILD') {
