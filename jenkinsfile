@@ -5,8 +5,8 @@ environment {
   git_repo = "https://github.com/vinay542486/central-repo-c-project.git"
 }
 parameters {
-  string{defaultValue: 'main', description: 'enter the branch to build', name: 'branch'}
-  string{defaultValue: 'https://github.com/vinay542486/testrepo.git', description: 'enter the repo url', name: 'git_repo'}
+  string{name: 'branch', description: 'enter the branch to build', defaultValue: 'main'}
+  string{name: 'git_repo', description: 'enter the repo url', defaultValue: 'https://github.com/vinay542486/testrepo.git'}
 }
 stages{
   stage('all') {
