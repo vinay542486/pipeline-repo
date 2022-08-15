@@ -15,6 +15,7 @@ stages{
       stage ('BUILD') {
         agent any
          steps {
+         script {
          if(params.stage == 'build') 
          {
            sh '''
@@ -22,27 +23,38 @@ stages{
            echo "$branch"
            echo "$branchnew"
            '''
+           } else {
+           echo "skipping build stage...."
+           }
            }
         }
       }
       stage ('DEPLOY') {
         agent { label 'lab2' }
         steps {
+        script {
          if(params.stage == 'deploy') 
          {
            echo "this is to test deploy stage"
+           } else {
+           echo "skipping deploy stage...."
+           }
            }
         }
       }
       stage ('TESTING1') {
         agent any
         steps {
+        script {
          if(params.stage == 'testing1') 
          {
            sh '''
            echo "this is to test testing stage"
            echo "$git_repo"
            '''
+           } else {
+           echo "skipping testing1 stage...."
+           }
            }
         }
       }
