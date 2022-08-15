@@ -5,8 +5,8 @@ environment {
   git_repo = "https://github.com/vinay542486/central-repo-c-project.git"
 }
 parameters {
-  string{name: 'branch', description: 'enter the branch to build', defaultValue: 'main'}
-  string{name: 'git_repo', description: 'enter the repo url', defaultValue: 'https://github.com/vinay542486/testrepo.git'}
+  string(name: 'branchnew', description: 'enter the branch to build', defaultValue: 'main')
+  string(name: 'git_repo', description: 'enter the repo url', defaultValue: 'https://github.com/vinay542486/testrepo.git')
 }
 stages{
   stage('all') {
@@ -17,6 +17,7 @@ stages{
            sh '''
            echo "this is to test build stage"
            echo "$branch"
+           echo "$branchnew"
            '''
         }
       }
