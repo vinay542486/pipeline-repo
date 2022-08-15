@@ -15,7 +15,8 @@ stages{
       stage ('BUILD') {
         agent any
          steps {
-         if(params.stage == 'build') {
+         if(params.stage == 'build') 
+         {
            sh '''
            echo "this is to test build stage"
            echo "$branch"
@@ -27,7 +28,8 @@ stages{
       stage ('DEPLOY') {
         agent { label 'lab2' }
         steps {
-         if(params.stage == 'deploy') {
+         if(params.stage == 'deploy') 
+         {
            echo "this is to test deploy stage"
            }
         }
@@ -35,7 +37,8 @@ stages{
       stage ('TESTING1') {
         agent any
         steps {
-         if(params.stage == 'testing1') {
+         if(params.stage == 'testing1') 
+         {
            sh '''
            echo "this is to test testing stage"
            echo "$git_repo"
